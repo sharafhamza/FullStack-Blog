@@ -1,9 +1,11 @@
-const express = require("express");
-const app = express();
-const registrationController = require("./controllers/registrationController");
-const secureAPI = require("./middlewares/secureAPI");
 require("dotenv").config();
+const express = require("express");
+const secureApi = require("./middlewares/secure_api");
+const registrationController = require("./controllers/RegistrationController");
+const app = express();
+const MongoDbconfig = require("./DB/MongoDbconfig");
+MongoDbconfig();
 app.use(express.json());
-app.get("/registration", secureAPI, registrationController);
+app.post("/registration", secureApi, registrationController);
 
-app.listen(8000);
+app.listen(3000);
