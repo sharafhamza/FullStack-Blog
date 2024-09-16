@@ -3,8 +3,8 @@ const express = require("express");
 const secureApi = require("./middlewares/secure_api");
 const registrationController = require("./controllers/RegistrationController");
 const app = express();
-const MongoDbconfig = require("./DB/MongoDbconfig");
 MongoDbconfig();
+const MongoDbconfig = require("./DB/MongoDbconfig");
 app.use(express.json());
 app.post("/registration", secureApi, registrationController);
 
