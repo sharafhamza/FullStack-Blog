@@ -15,7 +15,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     min: [8, "Must be at least 6, got {VALUE}"],
-    max: 12,
+    max: 10,
   },
 });
 
