@@ -20,8 +20,7 @@ function registrationController(req, res) {
       name: name,
       email: email,
       password: hash,
-    });
-    userData.save();
+    }).save();
     res.send({ message: "Registration Successful" });
   });
 }
