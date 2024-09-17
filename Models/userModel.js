@@ -17,6 +17,10 @@ const userSchema = new Schema({
     min: [8, "Must be at least 6, got {VALUE}"],
     max: 10,
   },
+  emailVerify: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);
